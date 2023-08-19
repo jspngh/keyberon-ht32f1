@@ -1,0 +1,52 @@
+[workspace]
+members = [
+    "kbpv80",
+    "pokerii",
+]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+authors = ["Jonas Spanoghe <jonas@spanoghe.net>"]
+license = "MIT"
+repository = "https://github.com/jspngh/keyberon-ht32f1"
+
+[workspace.dependencies]
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
+rtic = { version = "2.0.1", features = ["thumbv7-backend"] }
+rtic-monotonics = { version = "1.0.0", features = ["cortex-m-systick", "defmt"] }
+rtic-sync = "1.0.1"
+defmt = "0.3"
+defmt-brtt = { version = "0.1", default-features = false, features = ["rtt"] }
+panic-reset = "0.1.1"
+usb-device = "0.2.9"
+
+[workspace.dependencies.keyberon]
+git = "https://github.com/jspngh/keyberon"
+branch = "eh-1.0"
+features = ["eh1"]
+
+[workspace.dependencies.ht32f1yyy-hal]
+git = "https://github.com/ht32-rs/ht32f1yyy-hal"
+features = ["rt", "critical-section-impl"]
+
+# cargo build/run
+[profile.dev]
+codegen-units = 1
+debug = 2
+debug-assertions = true
+incremental = false
+opt-level = "s"
+overflow-checks = true
+
+# cargo build/run --release
+[profile.release]
+codegen-units = 1
+debug = 2
+debug-assertions = false
+incremental = false
+lto = 'fat'
+opt-level = "s"
+overflow-checks = false
+
