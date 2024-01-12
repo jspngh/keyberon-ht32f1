@@ -1,5 +1,5 @@
 [target.'cfg(all(target_arch = "arm", target_os = "none"))']
-runner = "probe-rs-cli run --chip HT32F1654_64LQFP"
+runner = "probe-rs run --chip HT32F1654_64LQFP"
 rustflags = [
     "-C", "link-arg=-Tlink.x",
     "-C", "link-arg=-Tdefmt.x",
