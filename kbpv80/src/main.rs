@@ -37,7 +37,7 @@ mod app {
         usb_dev: UsbDevice<'static, MyUsbBus>,
         matrix: MyMatrix,
         debouncer: Debouncer<[[bool; MTRX_C]; MTRX_R]>,
-        layout: Layout<MTRX_C, MTRX_R, 3, ()>,
+        layout: Layout<MTRX_C, MTRX_R, 2, ()>,
     }
 
     #[init(local = [

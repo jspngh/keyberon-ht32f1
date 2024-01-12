@@ -1,13 +1,13 @@
 use keyberon::action::l;
 
 #[rustfmt::skip]
-pub static LAYERS: keyberon::layout::Layers<8, 15, 3, ()> = keyberon::layout::layout! {
+pub static LAYERS: keyberon::layout::Layers<8, 15, 2, ()> = keyberon::layout::layout! {
     {
         [No     LShift   RShift No      Down    Left    Right   Up],
-        [No     LGui     RGui   {l(2)}  RAlt    LAlt    No      No],
+        [No     LGui     RGui   {l(1)}  RAlt    LAlt    No      No],
         [Grave  Escape   No     No      RCtrl   No      LCtrl   No],
         [Q      Tab      A      No      Z       No      No      Kb1],
-        [W      {l(1)}   S      No      X       No      No      Kb2],
+        [W      CapsLock S      No      X       No      No      Kb2],
         [E      No       D      No      C       No      No      Kb3],
         [R      T        F      G       V       B       Kb5     Kb4],
         [U      Y        J      H       M       N       Kb6     Kb7],
@@ -32,26 +32,9 @@ pub static LAYERS: keyberon::layout::Layers<8, 15, 3, ()> = keyberon::layout::la
         [t      t        Right  t       t       t       t       t],
         [t      Delete   t      t       t       t       t       t],
         [t      t        t      t       t       t       t       t],
+        [t      MediaPreviousSong MediaPlayPause MediaNextSong t t t t],
         [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-    }
-    {
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      CapsLock t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
-        [t      t        t      t       t       t       t       t],
+        [t      VolDown  VolUp  Mute    t       t       t       t],
     }
 };
 
